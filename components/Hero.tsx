@@ -48,12 +48,12 @@ export default function Hero() {
             </div>
 
             <div>
-              <h3>600+</h3>
+              <h3>100+</h3>
               <p>Ports Covered</p>
             </div>
 
             <div>
-              <h3>35+</h3>
+              <h3>20+</h3>
               <p>Years Experience</p>
             </div>
 
