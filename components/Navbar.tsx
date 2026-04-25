@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -14,7 +15,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // lock body scroll when menu open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
@@ -25,9 +25,17 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
 
-        {/* LOGO */}
+        {/* ✅ LOGO FIXED */}
         <Link href="/" className={styles.logo} onClick={handleLinkClick}>
-          AI Marine Surveyors Inc
+      <Image
+  src="/logo.png"
+  alt="AI Marine Surveyors Inc"
+  width={300}
+  height={90}
+  priority
+  unoptimized
+  className={styles.logoImg}
+/>
         </Link>
 
         {/* NAV */}
@@ -38,7 +46,6 @@ export default function Header() {
           <Link href="/location" onClick={handleLinkClick}>Location</Link>
           <Link href="/contact" onClick={handleLinkClick}>Contact</Link>
 
-          {/* mobile CTA */}
           <Link
             href="/contact"
             className={styles.ctaMobile}

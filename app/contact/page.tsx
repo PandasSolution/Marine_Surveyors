@@ -108,7 +108,9 @@ export default function Contact() {
             {/* ── LEFT: INFO ── */}
             <aside className={styles.infoCol}>
               <div className={styles.companyCard}>
-                <div className={styles.companyLogo}>⚓</div>
+               <div className={styles.companyLogo}>
+  <img src="/logo.png" alt="AI Marine Surveyors Logo" />
+</div>
                 <h2 className={styles.companyName}>AI Marine Surveyors, Inc.</h2>
                 <p className={styles.companyAbbr}>AIMS</p>
               </div>

@@ -427,6 +427,17 @@
   .formRow { grid-template-columns: 1fr; }
 }
 
+.companyLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companyLogo img {
+  height: 80px;   /* adjust size */
+  width: auto;
+  object-fit: contain;
+}
 @media (max-width: 600px) {
   .hero { padding: 140px 6vw 80px; }
   .body { padding: 60px 6vw 80px; }
