@@ -1,0 +1,297 @@
+/* ==============================
+   HERO
+   ============================== */
+.hero {
+  position: relative;
+  height: 92vh;
+  min-height: 600px;
+  background: url("/images/about.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 14, 28, 0.78);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeUp 1s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.heroEyebrow {
+  font-size: 13px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 28px;
+  font-family: "Courier New", monospace;
+}
+
+.heroContent h1 {
+  font-family: "Georgia", serif;
+  font-size: clamp(60px, 10vw, 110px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -3px;
+  margin-bottom: 28px;
+}
+
+.heroSub {
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  font-family: "Courier New", monospace;
+  margin: 0;
+}
+
+/* ==============================
+   LABELS
+   ============================== */
+.label {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #1d4ed8;
+  font-family: "Courier New", monospace;
+  margin-bottom: 20px;
+  background: #eff6ff;
+  padding: 6px 16px;
+  border-radius: 2px;
+}
+
+.labelLight {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  font-family: "Courier New", monospace;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 2px;
+}
+
+/* ==============================
+   SECTION HEAD (shared)
+   ============================== */
+.sectionHead {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionHead h2 {
+  font-family: "Georgia", serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 400;
+  color: #07111f;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+/* ==============================
+   WHO WE ARE
+   ============================== */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 680px;
+}
+
+.aboutImage {
+  background: url("/images/aboutS.jpg") center / cover no-repeat;
+}
+
+.aboutText {
+  padding: 100px 9%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutText h2 {
+  font-family: "Georgia", serif;
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 400;
+  color: #07111f;
+  line-height: 1.25;
+  margin-bottom: 36px;
+  letter-spacing: -0.5px;
+}
+
+.aboutText p {
+  font-size: 17px;
+  color: #374151;
+  line-height: 1.95;
+  margin-bottom: 18px;
+}
+
+.aboutText p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==============================
+   SERVICES
+   ============================== */
+.services {
+  padding: 110px 7%;
+  background: #f7f8fc;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.serviceCard {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 44px 36px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(7, 17, 31, 0.1);
+  border-color: #93c5fd;
+}
+
+.serviceNum {
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #d1d5db;
+  margin-bottom: 22px;
+}
+
+.serviceCard h3 {
+  font-family: "Georgia", serif;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 400;
+  color: #07111f;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.serviceCard p {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ==============================
+   AIMS
+   ============================== */
+.aimsSection {
+  background: #07111f;
+  padding: 110px 7%;
+}
+
+.aimsInner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.aimsInner h2 {
+  font-family: "Georgia", serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  letter-spacing: -1.5px;
+}
+
+.aimsSub {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.28);
+  font-family: "Courier New", monospace;
+  margin: 0 0 48px;
+}
+
+.aimsDivider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 48px;
+}
+
+.aimsBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.aimsBody p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.95;
+  margin: 0;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 1024px) {
+  .aimsBody {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutImage {
+    height: 340px;
+  }
+
+  .aboutText {
+    padding: 64px 6%;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContent h1 {
+    font-size: 52px;
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 42px;
+  }
+}

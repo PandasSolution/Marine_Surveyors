@@ -1,0 +1,93 @@
+.section {
+  padding: 110px 20px;
+  background: #ffffff; /* pure white */
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* LEFT CARD */
+.infoCard {
+  background: #ffffff;
+
+  border-radius: 20px;
+  padding: 35px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.badge {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #00aaff;
+  font-weight: 700;
+}
+
+.infoCard h2 {
+  font-size: 34px;
+  color: #0a1f33;
+  margin: 15px 0;
+}
+
+.infoCard p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* DETAILS */
+.details {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #333;
+  font-size: 14px;
+}
+
+.item svg {
+  color: #00aaff;
+  font-size: 18px;
+}
+
+/* MAP CARD */
+.mapCard {
+  border-radius: 20px;
+  overflow: hidden;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.map {
+  width: 100%;
+  height: 360px;
+  border: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .infoCard h2 {
+    font-size: 24px;
+  }
+}

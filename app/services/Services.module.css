@@ -1,0 +1,173 @@
+.section {
+  padding: 110px 20px 90px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft ocean glow */
+.section::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(circle, rgba(0,170,255,0.12), transparent 70%);
+  top: -150px;
+  right: -150px;
+
+  filter: blur(80px);
+}
+
+/* container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 65px;
+}
+
+/* badge */
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #0077cc;
+  margin-bottom: 12px;
+}
+
+/* title */
+.title {
+  font-size: 46px;
+  font-weight: 800;
+  color: #0a1f33;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+/* subtitle */
+.subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* CARD */
+.card {
+  text-decoration: none;
+  color: inherit;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px);
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 170, 255, 0.12);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+
+  transition: all 0.45s ease;
+
+  transform: perspective(1000px);
+}
+
+/* smooth premium hover */
+.card:hover {
+  transform: translateY(-14px) scale(1.02);
+
+  box-shadow:
+    0 35px 70px rgba(0,0,0,0.18),
+    0 0 0 1px rgba(0,170,255,0.2);
+}
+
+/* IMAGE WRAP */
+.imageWrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* image */
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* zoom on hover */
+.card:hover .img {
+  transform: scale(1.12);
+}
+
+/* CONTENT */
+.content {
+  padding: 22px;
+}
+
+/* service title */
+.content h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a1f33;
+  margin-bottom: 8px;
+}
+
+/* description */
+.content p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* CTA text */
+.content span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #00aaff;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.card:hover span {
+  transform: translateX(4px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .section {
+    padding: 70px 15px;
+  }
+
+  .imageWrap {
+    height: 200px;
+  }
+}

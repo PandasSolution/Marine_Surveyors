@@ -1,0 +1,154 @@
+.hero {
+  min-height: 100vh;
+
+  /* SAFE static image */
+  background: url("/images/marinebg.jpg") center/cover no-repeat;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  padding: 120px 20px 60px;
+  color: white;
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    rgba(5, 20, 35, 0.95),
+    rgba(10, 31, 51, 0.85),
+    rgba(10, 31, 51, 0.65)
+  );
+}
+
+/* container */
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+/* content */
+.left {
+  max-width: 650px;
+}
+
+/* badge */
+.badge {
+  display: inline-block;
+  background: rgba(0, 170, 255, 0.15);
+  color: #00aaff;
+
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  font-size: 13px;
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(0, 170, 255, 0.3);
+}
+
+/* heading */
+.left h1 {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* paragraph */
+.left p {
+  font-size: 18px;
+  color: #d1d5db;
+  margin-bottom: 30px;
+}
+
+/* buttons */
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.primary {
+  background: linear-gradient(45deg, #00aaff, #0077ff);
+  border: none;
+
+  padding: 14px 28px;
+  border-radius: 30px;
+
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+}
+
+.secondary {
+  border: 1px solid rgba(255,255,255,0.4);
+
+  padding: 14px 28px;
+  border-radius: 30px;
+
+  color: white;
+  background: transparent;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.secondary:hover {
+  background: white;
+  color: black;
+}
+
+/* stats */
+.stats {
+  display: flex;
+  gap: 40px;
+}
+
+.stats h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.stats p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
+  .left h1 {
+    font-size: 30px;
+  }
+
+  .left p {
+    font-size: 15px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
