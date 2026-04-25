@@ -57,7 +57,7 @@ ${form.message}
           <div className={styles.bigCard}>
             <span className={styles.tag}>LET’S GET STARTED</span>
 
-            <h3 className={styles.phone}>+1 (504) 469-1100</h3>
+            <h3 className={styles.phone}>+1 (281) 636-6664</h3>
 
             <p className={styles.text}>
               Your thoughts are important to us, and we’re here to assist you in any way we can.
