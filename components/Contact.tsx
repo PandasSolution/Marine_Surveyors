@@ -4,13 +4,13 @@ import { useState } from "react";
 import styles from "./ContactForm.module.css";
 
 export default function ContactLocation() {
-  const whatsapp = "8801748399860";
+  // ✅ Updated WhatsApp number (without +)
+  const whatsapp = "17132812146";
 
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    address: "",
     message: "",
   });
 
@@ -27,7 +27,6 @@ export default function ContactLocation() {
 Name: ${form.name}
 Email: ${form.email}
 Phone: ${form.phone}
-Address: ${form.address}
 
 Message:
 ${form.message}
@@ -41,7 +40,6 @@ ${form.message}
 
   return (
     <section className={styles.section}>
-
       {/* HEADER */}
       <div className={styles.header}>
         <span>CONTACT US</span>
@@ -54,15 +52,12 @@ ${form.message}
 
       {/* CONTENT */}
       <div className={styles.container}>
-
-        {/* LEFT */}
+        {/* LEFT (UNCHANGED) */}
         <div className={styles.leftCard}>
-
           <div className={styles.bigCard}>
-
             <span className={styles.tag}>LET’S GET STARTED</span>
 
-            <h3 className={styles.phone}>+1 (281) 636-6664</h3>
+            <h3 className={styles.phone}>+1 (504) 469-1100</h3>
 
             <p className={styles.text}>
               Your thoughts are important to us, and we’re here to assist you in any way we can.
@@ -82,39 +77,43 @@ ${form.message}
               <span>🌍 Global Support</span>
               <span>🔒 Trusted Service</span>
             </div>
-
           </div>
-
         </div>
 
         {/* RIGHT FORM */}
         <div className={styles.formCard}>
-
           <h3>Send Message</h3>
 
           <form onSubmit={handleSubmit}>
-
             <div className={styles.row}>
-              <input className={styles.input} name="name" placeholder="Your Name" onChange={handleChange} />
-              <input className={styles.input} name="email" placeholder="Email Address" onChange={handleChange} />
+              <input
+                className={styles.input}
+                name="name"
+                placeholder="Your Name"
+                onChange={handleChange}
+              />
+              <input
+                className={styles.input}
+                name="email"
+                placeholder="Email Address"
+                onChange={handleChange}
+              />
             </div>
 
+            {/* ✅ Only phone (address removed) */}
             <div className={styles.row}>
-              <input className={styles.input} name="phone" placeholder="Phone Number" onChange={handleChange} />
-
-              <select className={styles.input} name="address" onChange={handleChange}>
-                <option>Select Office</option>
-                <option>Dhaka HQ</option>
-                <option>Chittagong Port</option>
-                <option>Khulna Office</option>
-                <option>Global Support</option>
-              </select>
+              <input
+                className={styles.input}
+                name="phone"
+                placeholder="Phone Number"
+                onChange={handleChange}
+              />
             </div>
 
             <textarea
               className={styles.textarea}
               name="message"
-              placeholder="How can we help you?"
+              placeholder="How can I help you?"
               rows={6}
               onChange={handleChange}
             />
@@ -122,11 +121,8 @@ ${form.message}
             <button className={styles.button}>
               Send Message
             </button>
-
           </form>
-
         </div>
-
       </div>
     </section>
   );
