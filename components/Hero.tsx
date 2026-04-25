@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./Hero.module.css";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -17,21 +18,26 @@ export default function Hero() {
           </span>
 
           <h1>
-           AI Marine Surveyors Inc. 
+            AI Marine Surveyors Inc.
           </h1>
 
           <p>
-         Independent Marine Surveyors, Maritime Consultants, Port Captains, Port Engineers, Investigators for Cargo, Hull & Machinery Claims. 
+            Independent Marine Surveyors, Maritime Consultants, Port Captains,
+            Port Engineers, Investigators for Cargo, Hull & Machinery Claims.
           </p>
 
           <div className={styles.buttons}>
-            <button className={styles.primary}>
-              Get Free Quote
-            </button>
 
-            <button className={styles.secondary}>
+            {/* 👉 CONTACT PAGE */}
+            <Link href="/contact" className={styles.primary}>
+              Get Free Quote
+            </Link>
+
+            {/* 👉 SERVICES PAGE */}
+            <Link href="/servicespage" className={styles.secondary}>
               Our Services
-            </button>
+            </Link>
+
           </div>
 
           <div className={styles.stats}>
