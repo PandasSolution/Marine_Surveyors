@@ -12,14 +12,7 @@ const offices = [
     state: "Texas, USA",
     flag: "🇺🇸",
     featured: true,
-    ports: [
-      "Brownsville",
-      "Corpus Christi",
-      "Houston",
-      "Beaumont",
-      "Port Arthur",
-      "Lake Charles",
-    ],
+    ports: ["Brownsville","Corpus Christi","Houston","Beaumont","Port Arthur","Lake Charles"],
   },
   {
     code: "02",
@@ -27,11 +20,7 @@ const offices = [
     state: "Louisiana, USA",
     flag: "🇺🇸",
     featured: false,
-    ports: [
-      "All of Mississippi River",
-      "Gulf Ports",
-      "Mobile, AL",
-    ],
+    ports: ["All of Mississippi River","Gulf Ports","Mobile, AL"],
   },
   {
     code: "03",
@@ -47,11 +36,7 @@ const offices = [
     state: "Virginia, USA",
     flag: "🇺🇸",
     featured: false,
-    ports: [
-      "Baltimore",
-      "Wilmington, NC",
-      "North Carolina",
-    ],
+    ports: ["Baltimore","Wilmington, NC","North Carolina"],
   },
   {
     code: "05",
@@ -59,7 +44,7 @@ const offices = [
     state: "Massachusetts, USA",
     flag: "🇺🇸",
     featured: false,
-    ports: ["Maine to New York", "Hudson River"],
+    ports: ["Maine to New York","Hudson River"],
   },
   {
     code: "06",
@@ -67,12 +52,7 @@ const offices = [
     state: "Singapore",
     flag: "🇸🇬",
     featured: true,
-    ports: [
-      "Singapore",
-      "Indonesian Ports",
-      "Malaysian Ports",
-      "Yangon",
-    ],
+    ports: ["Singapore","Indonesian Ports","Malaysian Ports","Yangon"],
   },
   {
     code: "07",
@@ -102,6 +82,11 @@ export default function Location() {
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        {/* Noto Color Emoji for reliable flag rendering */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <div className={styles.wrap}>
@@ -109,7 +94,6 @@ export default function Location() {
 
         {/* ═══ HERO ═══ */}
         <section className={styles.hero}>
-          {/* decorative lines */}
           <svg className={styles.heroDeco} viewBox="0 0 800 700" fill="none">
             <circle cx="600" cy="350" r="280" stroke="rgba(255,255,255,0.04)" strokeWidth="1"/>
             <circle cx="600" cy="350" r="200" stroke="rgba(255,255,255,0.04)" strokeWidth="1"/>
@@ -125,21 +109,18 @@ export default function Location() {
               <span className={styles.heroBadgeDot}/>
               Global Presence
             </span>
-
             <h1 className={styles.heroH1}>
               Worldwide<br/><em>Coverage</em>
             </h1>
-
             <p className={styles.heroP}>
               8 offices spanning 4 continents — expert marine survey services
               wherever your vessel calls port.
             </p>
-
             <div className={styles.heroStats}>
               {[
                 { num: "8",  label: "Offices" },
                 { num: "4",  label: "Continents" },
-                { num: "5+",label: "Countries" },
+                { num: "5+", label: "Countries" },
               ].map((s, i) => (
                 <div key={i} className={styles.heroStat}>
                   <strong>{s.num}</strong>
@@ -153,36 +134,36 @@ export default function Location() {
         {/* ═══ OFFICES GRID ═══ */}
         <section className={styles.officesSection}>
           <div className={styles.officesTop}>
-            <p className={styles.eyebrow}>— Our Offices</p>
-            <h2 className={styles.officesH2}>Where We Operate</h2>
-            <p className={styles.officesSub}>
-              Click on any office to see full coverage details.
-            </p>
+            <h1 className={styles.eyebrow}>— Our Offices</h1>
           </div>
 
           <div className={styles.grid}>
             {offices.map((o) => (
-              <div key={o.code} className={`${styles.card} ${o.featured ? styles.cardFeatured : ""}`}>
-
-                {/* card header */}
+              <div
+                key={o.code}
+                className={`${styles.card} ${o.featured ? styles.cardFeatured : ""}`}
+              >
+                {/* header */}
                 <div className={styles.cardHead}>
                   <div className={styles.cardHeadLeft}>
+                    {/* big flag */}
                     <span className={styles.cardFlag}>{o.flag}</span>
                     <div>
                       <h3 className={styles.cardCity}>{o.city}</h3>
-                      <p className={styles.cardState}>{o.state}</p>
+                      {/* small flag + country name */}
+                      <p className={styles.cardState}>
+                        <span className={styles.cardStateFlag}>{o.flag}</span>
+                        {o.state}
+                      </p>
                     </div>
                   </div>
                   <span className={styles.cardCode}>#{o.code}</span>
                 </div>
 
-                {/* divider */}
                 <div className={styles.cardDivider}/>
 
-                {/* coverage label */}
                 <p className={styles.cardCoverageLabel}>Coverage Area</p>
 
-                {/* ports */}
                 <ul className={styles.cardPorts}>
                   {o.ports.map((port, j) => (
                     <li key={j} className={styles.cardPort}>
@@ -192,7 +173,6 @@ export default function Location() {
                   ))}
                 </ul>
 
-                {/* featured tag */}
                 {o.featured && (
                   <span className={styles.featuredTag}>Main Hub</span>
                 )}
@@ -201,20 +181,62 @@ export default function Location() {
           </div>
         </section>
 
-        {/* ═══ ASSOCIATE BANNER ═══ */}
+        {/* ═══ ASSOCIATE SECTION — REDESIGNED ═══ */}
         <section className={styles.associate}>
-          <div className={styles.associateInner}>
-            <div className={styles.associateIcon}>🌐</div>
-            <div className={styles.associateText}>
-              <h2>Associate Offices — Worldwide</h2>
-              <p>
-                We also maintain associate offices covering most major ports around the globe.
+          {/* bg glow layer */}
+          <div className={styles.associateBg} />
+
+          {/* pill label */}
+          <div className={styles.associateLabel}>
+            <span className={styles.associatePill}>
+              <span className={styles.associatePillDot}/>
+              Associate Network
+            </span>
+          </div>
+
+          {/* main card */}
+          <div className={styles.associateCard}>
+
+            {/* globe icon */}
+            <div className={styles.associateGlobe}>🌐</div>
+
+            {/* text */}
+            <div className={styles.associateBody}>
+              <p className={styles.associateEyebrow}>Worldwide Coverage</p>
+              <h2 className={styles.associateH2}>
+                Associate Offices —<br/>Around the Globe
+              </h2>
+              <p className={styles.associateP}>
+                We maintain associate offices covering most major ports worldwide.
                 If you don&apos;t see your port listed, please ask — we most likely have coverage.
               </p>
+
+              {/* stats */}
+              <div className={styles.associateStats}>
+                {[
+                  { num: "80+",  label: "Countries" },
+                  { num: "100+", label: "Ports" },
+                  { num: "24/7", label: "Support" },
+                ].map((s, i) => (
+                  <div key={i} className={styles.associateStat}>
+                    <span className={styles.associateStatNum}>{s.num}</span>
+                    <span className={styles.associateStatLabel}>{s.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <a href="mailto:info@aimarine.com" className={styles.associateBtn}>
-              Ask About Your Port →
-            </a>
+
+            {/* CTA */}
+            <div className={styles.associateCta}>
+              <a href="mailto:info@aimarine.com" className={styles.associateBtn}>
+                Ask About Your Port
+                <span className={styles.associateBtnArrow}>→</span>
+              </a>
+              <p className={styles.associateBtnNote}>
+                Usually responds within 24 hours
+              </p>
+            </div>
+
           </div>
         </section>
 
