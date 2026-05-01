@@ -1,14 +1,11 @@
-
 import Navbar from '@/components/Navbar';
-import './globals.css';
 import Footer from '@/components/Footer';
+import './globals.css';
 
 export const metadata = {
   title: 'AI Marine Surveyors Inc.',
   description: 'AI Marine Surveyors provides a prompt, reliable and cost effective surveying and consultancy service to the marine industry.',
-  icons: {
-    icon: '/public/favicon.ico', // <-- use your actual filename here
-  },
+  // ✅ icons আর লিখতে হবে না! favicon.ico app/ এ থাকলে Next.js নিজেই ধরে নেয়
 };
 
 export default function RootLayout({
@@ -18,8 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Navbar />
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
